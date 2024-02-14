@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import Cropper from "react-cropper";
 import "cropperjs/dist/cropper.css";
 import { MdCancel } from "react-icons/md";
+import Image from "next/image";
 
 interface ImageModalProps {
   imageUrl: string;
@@ -64,7 +65,7 @@ const ImageModal: React.FC<ImageModalProps> = ({
           </button>
         </div>
         {croppedImage && (
-          <img
+          <Image
             src={croppedImage}
             alt="Cropped Image"
             className="mt-2 max-h-60 w-auto rounded"
